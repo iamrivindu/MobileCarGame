@@ -22,4 +22,12 @@ public class carController : MonoBehaviour
         position.x = Mathf.Clamp(position.x, -2.2f, 2.2f);
         transform.position = position;
     }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Enemy Car")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
